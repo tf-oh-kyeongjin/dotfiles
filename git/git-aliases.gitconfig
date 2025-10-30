@@ -2,6 +2,15 @@
     st = status -sb
     co = checkout
     hello = !git-hello
+    fa = fetch -a
+    br = branch -vv
+    nb = "!f() { checkout -b feature/$1 && git branch -vv; }; f"
+    bd = "!f() { git branch -d \"$1\" && git branch -vv; }; f"
+    bD = "!f() { git branch -D \"$1\" && git branch -vv; }; f"
+    aa = add .
+    cm = commit
+    ca = commit --amend
+    pH = "!f() { git push -u origin HEAD && git branch -vv; }; f"
 
 [core]
     pager = less -FRX
