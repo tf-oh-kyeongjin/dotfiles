@@ -1,0 +1,7 @@
+[alias]
+    st = status -sb
+    co = checkout
+    hello = !git-hello
+
+[core]
+    pager = less -FRX

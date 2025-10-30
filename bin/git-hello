@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Hello from your dotfiles! Repository: $(git rev-parse --show-toplevel 2>/dev/null || echo 'not inside a repo')."
