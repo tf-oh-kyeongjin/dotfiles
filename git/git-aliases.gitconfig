@@ -1,6 +1,6 @@
 [alias]
     st = status -sb
-    co = checkout
+    co = "!f() { git checkout $1 && git branch -vv; }; f"
     hello = !git-hello
     fa = "!f() { git fetch -a && git branch -vv; }; f"
     br = branch -vv
