@@ -1,18 +1,18 @@
-# Sample Dotfiles Repository
+# サンプル Dotfiles リポジトリ
 
-This directory shows a minimal dotfiles setup that works nicely with VS Code Dev Containers (or the `devcontainer` CLI) without checking any configuration into your project repository.
+このディレクトリは、プロジェクトリポジトリに設定を一切含めずに、VS Code Dev Containers（または `devcontainer` CLI）と組み合わせて使いやすい最小構成の dotfiles セットアップを示しています。
 
-## Structure
+## 構成
 
-- `install.sh` – called automatically by Dev Containers after the repo is cloned to `~/.dotfiles`. It installs the Git configuration fragment and a custom Git subcommand into your home directory.
-- `git/git-aliases.gitconfig` – a separate Git config fragment that is included from your `~/.gitconfig`. You can keep any Git tweaks here without polluting the project repository.
-- `bin/git-hello` – an example Git custom command. Any executable named `git-*` on your `PATH` becomes invokable as `git *`.
+- `install.sh` – Dev Containers がリポジトリを `~/.dotfiles` にクローンした後、自動的に呼び出されます。Git 設定フラグメントとカスタム Git サブコマンドをホームディレクトリにインストールします。
+- `git/git-aliases.gitconfig` – `~/.gitconfig` から読み込まれる別の Git 設定フラグメントです。プロジェクトリポジトリを汚さずに、Git に関する調整をここにまとめておけます。
+- `bin/git-hello` – Git のカスタムコマンドの例です。`PATH` 上にある `git-*` という名前の実行ファイルは、`git *` として呼び出せるようになります。
 
-## How to use
+## 使い方
 
-1. Push this directory to your private dotfiles repository. Its root should contain `install.sh`.
-2. In VS Code, open **Settings** and set `Dev › Containers: Dotfiles Repository` to the Git URL (or configure `devcontainer` CLI with `--dotfiles-repository`).
-3. Reopen your Dev Container. The dotfiles repo is cloned into `~/.dotfiles` and `install.sh` runs automatically.
-4. In the container, run `git hello` to confirm that the custom command is available.
+1. このディレクトリをプライベートな dotfiles リポジトリにプッシュします。リポジトリのルートには `install.sh` を置いてください。
+2. VS Code を開き、**Settings** で `Dev › Containers: Dotfiles Repository` を Git の URL に設定します（または `devcontainer` CLI で `--dotfiles-repository` を指定）。
+3. Dev Container を再度開きます。dotfiles リポジトリが `~/.dotfiles` にクローンされ、`install.sh` が自動的に実行されます。
+4. コンテナ内で `git hello` を実行し、カスタムコマンドが利用可能になっていることを確認します。
 
-You can extend the repo by adding more scripts to `bin/`, shell configuration, editor settings, and so on. Only files in your dotfiles repository are synced—your project repository stays untouched.
+このリポジトリは、`bin/` にスクリプトを追加したり、シェル設定やエディタ設定を加えることで拡張できます。同期されるのは dotfiles リポジトリ内のファイルだけで、プロジェクトリポジトリは手つかずのまま保たれます。
