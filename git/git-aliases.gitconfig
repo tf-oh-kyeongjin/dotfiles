@@ -1,11 +1,11 @@
 [alias]
     st = status -sb
     sw = "!f() { git switch $1 && git branch -vv; }; f"
-    co = "!f() { git checkout $1 && git branch -vv; }; f"
+    co = "!f() { git fetch -a && git checkout $1 && git branch -vv; }; f"
     hello = !git-hello
     fa = "!f() { git fetch -a && git branch -vv; }; f"
     br = branch -vv
-    nb = "!f() { git checkout -b feature/$1 origin/$2 && git branch -vv; }; f"
+    nb = "!f() { git fetch -a && git checkout -b feature/$1 origin/$2 && git branch -vv; }; f"
     bd = "!f() { git branch -d \"$1\" && git branch -vv; }; f"
     bD = "!f() { git branch -D \"$1\" && git branch -vv; }; f"
     aa = add .
